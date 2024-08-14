@@ -1,5 +1,5 @@
 import { bucket } from '../firebaseAdmin.js'; // Adjust path as needed
-import Product from '../models/Products.model.js';
+import Product from '../models/products.model.js';
 import { v4 as uuidv4 } from 'uuid'; // To generate unique filenames
 import path from 'path';
 import Order from '../models/orders.model.js';

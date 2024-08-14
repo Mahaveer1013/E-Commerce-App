@@ -1,6 +1,6 @@
 import Cart from "../models/cart.model.js";
 import Order from "../models/orders.model.js";
-import Product from "../models/Products.model.js";
+import Product from "../models/products.model.js";
 
 export const manageCartItems = async (req, res) => {
     console.log(req.method);
