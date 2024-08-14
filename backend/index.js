@@ -16,7 +16,7 @@ app.use(decryptRequest);
 
 
 app.use(cors({
-  origin: true,
+  origin: ['https://main--mahaveer-e-commerce.netlify.app', 'http://localhost:5173'],
   credentials: true
 }));
 
