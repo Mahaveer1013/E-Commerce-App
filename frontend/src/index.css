@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #f8fffc;
+    --secondary: #e8e8e7;
+    --tertiary: #e8e7d5;
+    --hover: #b0b7b1;
+    --darkhover: #1e293b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary);
+}
+
+.fcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fbc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fec {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
