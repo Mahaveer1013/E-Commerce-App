@@ -16,6 +16,10 @@ const upload = multer({
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+    res.send('connected successfully')
+})
+
 // ===========> get initally data <==========
 router.get('/user', loginRequired, getUser);
 router.get('/all-products', loginRequired, getAllProducts)
