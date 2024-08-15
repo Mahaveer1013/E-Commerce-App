@@ -15,15 +15,13 @@ app.use(encryptResponse);
 app.use(decryptRequest);
 
 
-const allowedOrigins = ['https://main--mahaveer-e-commerce.netlify.app', 'https://mahaveer-e-commerce.netlify.app',
-  'https://main--mahaveer-e-commerce.netlify.app/*',
-  'http://localhost:5173/', 'http://localhost:5173', 'https://localhost:3000/'];
-
 app.use(cors({
   origin: function (origin, callback) {
+    console.log('Origin:', origin); // Debugging line
     if (!origin) return callback(null, true);
     if (allowedOrigins.indexOf(origin) === -1) {
       const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      console.log('Blocked Origin:', origin); // Debugging line
       return callback(new Error(msg), false);
     }
     return callback(null, true);
@@ -35,7 +33,6 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', 'true');
   next();
 });
-
 
 app.use(cookieParser());
 
