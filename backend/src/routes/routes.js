@@ -20,8 +20,8 @@ router.get('/', (req, res) => {
     res.send('connected successfully')
 })
 
-router.get('/check', (req, res) => {
-    res.json({message: 'checking successfull'})
+router.post('/check', (req, res) => {
+    res.json(req.body.data)
 })
 
 // ===========> get initally data <==========
