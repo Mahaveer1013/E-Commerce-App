@@ -11,8 +11,16 @@ import Admin from './pages/Admin';
 import Sidebar from './components/SideBar';
 import CheckoutModal from './pages/CheckoutModal';
 import ProductManagement from './pages/ProductManagement';
+import api from './api/api';
 
 function App() {
+
+    try {
+        const response = api.get('/')
+        console.log(response.data);
+    } catch (error) {
+        console.log(error);
+    }
 
     const { isAuth, isSidebar } = useContext(AuthContext);
 
