@@ -20,6 +20,10 @@ router.get('/', (req, res) => {
     res.send('connected successfully')
 })
 
+router.get('/check', (req, res) => {
+    res.json({message: 'checking successfull'})
+})
+
 // ===========> get initally data <==========
 router.get('/user', loginRequired, getUser);
 router.get('/all-products', loginRequired, getAllProducts)
