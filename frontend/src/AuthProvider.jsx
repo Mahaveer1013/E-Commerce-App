@@ -111,10 +111,10 @@ function AuthProvider({ children }) {
     }
 
     useEffect(() => {
-        fetchUser()
-        fetchCartData()
-        fetchProducts()
-    }, [])
+        !isAuth && fetchUser()
+        isAuth && fetchCartData()
+        isAuth && fetchProducts()
+    }, [isAuth])
 
     const value = {
         isAuth, user, setUser, setIsAuth, loading, setLoading, logout, fetchUser,
