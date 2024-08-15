@@ -14,6 +14,13 @@ app.use(express.json());
 app.use(encryptResponse);
 app.use(decryptRequest);
 
+const allowedOrigins = [
+  'https://main--mahaveer-e-commerce.netlify.app',
+  'https://mahaveer-e-commerce.netlify.app',
+  'http://localhost:5173',
+  'https://localhost:3000'
+];
+
 
 app.use(cors({
   origin: function (origin, callback) {
