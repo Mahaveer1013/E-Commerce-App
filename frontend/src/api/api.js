@@ -8,7 +8,7 @@ const api = axios.create({
 console.log('My backend url is ' + import.meta.env.VITE_BACKEND_URL, '\n\n');
 
 try {
-    const response = api.get('/check')
+    const response = api.get('/')
     console.log(response.data);
 } catch (error) {
     console.log(error);
