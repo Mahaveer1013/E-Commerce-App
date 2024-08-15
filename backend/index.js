@@ -15,7 +15,9 @@ app.use(encryptResponse);
 app.use(decryptRequest);
 
 
-const allowedOrigins = ['https://mahaveer-e-commerce.netlify.app','https://mahaveer-e-commerce.netlify.app/','https://mahaveer-e-commerce.netlify.app/*', 'http://localhost:5173/', 'https://localhost:3000/'];
+const allowedOrigins = ['https://main--mahaveer-e-commerce.netlify.app', 'https://mahaveer-e-commerce.netlify.app',
+  'https://main--mahaveer-e-commerce.netlify.app/*',
+  'http://localhost:5173/', 'http://localhost:5173', 'https://localhost:3000/'];
 
 app.use(cors({
   origin: function (origin, callback) {

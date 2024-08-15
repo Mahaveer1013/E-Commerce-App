@@ -2,7 +2,6 @@ import axios from 'axios';
 import CryptoJS from 'crypto-js';
 
 
-
 const encryptApi = axios.create({
     baseURL: import.meta.env.VITE_BACKEND_URL,
     withCredentials: true,
