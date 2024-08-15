@@ -78,15 +78,19 @@ export const getAdminData = async (req, res) => {
         ]);
 
         const orderHistory = await Order.find().populate('user').populate('products.product').sort({ createdAt: -1 });
-
-        const orderHistoryData = orderHistory.map(order => ({
-            _id: order._id,
-            username: order.user.username,
-            numProducts: order.products.length,
-            totalPrice: order.price,
-            products: order.products.map(p => p.product.name),
-            status: order.status === 1 ? 'Ordered' : 'Delivered'
-        }));
+        let orderHistoryData;
+        if (orderHistory) {
+            orderHistoryData = orderHistory.map(order => ({
+                _id: order._id,
+                username: order.user.username,
+                numProducts: order.products.length,
+                totalPrice: order.price,
+                products: order.products.map(p => p.product.name),
+                status: order.status === 1 ? 'Ordered' : 'Delivered'
+            }));
+        } else {
+            orderHistoryData = null
+        }
 
         res.json({ topSellingProducts, ordersPerDay, orderHistory: orderHistoryData });
     } catch (error) {

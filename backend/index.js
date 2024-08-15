@@ -16,7 +16,7 @@ app.use(decryptRequest);
 
 
 app.use(cors({
-  origin: ['https://main--mahaveer-e-commerce.netlify.app', 'http://localhost:5173'],
+  origin: '*',
   credentials: true
 }));
 
@@ -24,7 +24,7 @@ app.use(cookieParser());
 
 app.use('/', apiRoutes);
 
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURI)
   .then(() => {
     app.listen(5000, '0.0.0.0',() => {
       console.log('Server is running on port http://localhost:5000');
